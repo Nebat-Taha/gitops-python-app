@@ -8,6 +8,7 @@ on:
 jobs:
   # Job 1: Build and Test (No Approval Needed)
   build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
