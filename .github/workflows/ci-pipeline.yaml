@@ -66,6 +66,6 @@ jobs:
           kustomize edit set image nebat/gitops-python-app:${{ github.sha }}
           git config user.name "CI Bot"
           git config user.email "bot@ci.com"
-          git add deployment.yaml
+          git add .
           git commit -m "chore: update image to ${{ github.sha }}"
           git push
