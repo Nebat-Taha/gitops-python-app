@@ -57,13 +57,18 @@ jobs:
         with:
           repository: Nebat-Taha/gitops-manifests # <--- CHANGE THIS
           ssh-key: ${{ secrets.MANIFEST_REPO_KEY }}
+          path: manifests
           persist-credentials: true
 
-      - name: Update Image Tag
+      - name: Update Image Tag with Kustomize
         run: |
-          # Use yq to update the deployment.yaml with the current SHA
-          sed -i "s|image: nebat/gitops-python-app:.*|image: nebat/gitops-python-app:${{ github.sha }}|g" deployment.yaml
-          
+          cd manifests/base
+
+        # This command tells Kustomize to update the image tag for your specific container
+        # No regex, no sed, no risks!
+          kustomize edit set image nebat/gitops-python-app:${{ github.sha }}
+
+
           # Commit and push
           git config user.name "CI Bot"
           git config user.email "bot@ci.com"
