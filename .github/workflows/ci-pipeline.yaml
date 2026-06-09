@@ -63,13 +63,7 @@ jobs:
       - name: Update Image Tag with Kustomize
         run: |
           cd manifests/base
-
-        # This command tells Kustomize to update the image tag for your specific container
-        # No regex, no sed, no risks!
           kustomize edit set image nebat/gitops-python-app:${{ github.sha }}
-
-
-          # Commit and push
           git config user.name "CI Bot"
           git config user.email "bot@ci.com"
           git add deployment.yaml
