@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-push:
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
