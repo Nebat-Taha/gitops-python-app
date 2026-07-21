@@ -26,7 +26,7 @@ jobs:
   # Job 2: Push (Requires Approval)
   Push:
     needs: build
-    environment: dev 
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact
@@ -49,7 +49,7 @@ jobs:
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/gitops-python-app:${{ github.sha }}
 
   update-manifest:
-    needs: push
+    needs: Push
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Manifest Repo
