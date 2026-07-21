@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import os
 import socket
 
-app = FastAPI(title="GitOps Delivery App")
+app = FastAPI(title="GitOps Delivery App Demo")
 
 @app.get("/")
 def read_root():
