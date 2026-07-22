@@ -7,7 +7,7 @@ app = FastAPI(title="GitOps Delivery App Demo")
 @app.get("/")
 def read_root():
     return {
-        "message": "Hello, Automated GitOps is awesome and up!",
+        "message": "Hello, Automated GitOps is awesome and up, for Demo!",
         #"hostname": socket.gethostname(),
         #"environment": os.getenv("APP_ENV", "development")
     }
