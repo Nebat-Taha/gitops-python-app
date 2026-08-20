@@ -18,7 +18,7 @@ This repository acts as the **GitOps Manifests** (State of Truth) repository, de
 │   ├── service.yaml           # Cluster networking configuration
 │   └── kustomization.yaml     # Kustomize environment overlay manager
 └── README.md
-
+````
 🚀 Quick Start (Automated Bootstrap)
 You can spin up the entire local Kubernetes environment, install ArgoCD via Server-Side Apply, and prepare the GitOps engine in under 5 minutes using the automated bootstrap framework.
 Prerequisites
