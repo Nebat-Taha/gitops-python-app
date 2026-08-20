@@ -27,25 +27,31 @@ Prerequisites
 •	Kubectl (CLI utility)
 
 1. Clone the Repository
+
+```text
 Bash
 git clone https://github.com/<your-username>/gitops-manifests.git
 cd gitops-manifests
-
+````
 2. Execute the Bootstrap Script
 The setup script initializes Minikube with the Docker driver, validates the namespace configuration, and safely installs ArgoCD using high-reliability server-side application logic:
+```text
 Bash
 chmod +x bootstrap/setup.sh
 ./bootstrap/setup.sh
-
+````
 3. Access the ArgoCD Dashboard
 Retrieve your automatically generated initial admin password:
+```text
 Bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d; echo
-
+````
 Then, forward the local traffic to access the Web UI:
+
+```text
 Bash
 kubectl port-forward svc/argocd-server -n argocd 8080:443
-
+````
 Open your browser and navigate to https://localhost:8080 (log in with username admin and your retrieved password).
 🛠️ Key Technical Highlights
 •	Infrastructure as Code (IaC): Eliminates manual cluster configuration by wrapping environment initialization into a reliable shell automation script (setup.sh).
