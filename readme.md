@@ -53,9 +53,12 @@ Bash
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ````
 Open your browser and navigate to https://localhost:8080 (log in with username admin and your retrieved password).
-🛠️ Key Technical Highlights
+
+## 🛠️ Key Technical Highlights
 •	Infrastructure as Code (IaC): Eliminates manual cluster configuration by wrapping environment initialization into a reliable shell automation script (setup.sh).
+
 •	Server-Side Application Management: Utilizes kubectl apply --server-side to efficiently bypass client-side payload restrictions when processing large enterprise-scale custom resource definitions (CRDs).
+
 •	Pull-Based Continuous Deployment: ArgoCD continuously monitors this Git repository, automatically synchronizing live cluster states with declared version-controlled manifests to guarantee zero configuration drift.
 
 🔄 Cross-Repository GitOps Workflow
