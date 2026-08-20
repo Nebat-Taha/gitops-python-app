@@ -1,4 +1,4 @@
-GitOps Automated Application Delivery Platform
+GitOps Automated Application Delivery Platform 
 A production-grade, declarative GitOps deployment pipeline built using Kubernetes, ArgoCD, and GitHub Actions. This project demonstrates automated infrastructure bootstrapping, containerized application delivery, and synchronization tracking following modern DevSecOps standards.
 🏗️ Architecture & Repository Structure
 This repository acts as the GitOps Manifests (State of Truth) repository, decoupled from the application source code to ensure strict operational boundaries and auditability.
